@@ -25,7 +25,6 @@ for(yid in c(1:length(rawData[,1])))
 {
   barplot(as.matrix(rawData[yid,c(-1,-2)]), main = paste0("國立臺灣大學", rawData[yid,1],"年大學部總計", rawData[yid,2], "人"))
 }
-```
-
+<img src=''>
 ## rrr
 分析
