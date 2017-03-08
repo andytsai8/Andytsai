@@ -1,0 +1,31 @@
+---
+title: "HW1_NTUnumber"
+author: "R04524043_ChenYuTsai"
+date: "2017年3月1日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+台大人~~~年~~~
+資料來源：
+
+```{r}
+rawData = read.csv('NTU.csv', header = TRUE)
+allLine = length(rawData[,1])
+rawData = rawData[-allLine,]
+
+# year = rawData$年度 # or year = rawData[,1]
+
+
+for(yid in c(1:length(rawData[,1])))
+{
+  barplot(as.matrix(rawData[yid,c(-1,-2)]), main = paste0("國立臺灣大學", rawData[yid,1],"年大學部總計", rawData[yid,2], "人"))
+}
+```
+
+## rrr
+分析

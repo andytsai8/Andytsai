@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list = ls(all=TRUE))\nlibrary(png)\nlibrary(animation)\n\nrawData = read.csv('HitData.csv', header = TRUE)\n# allLine = length(rawData[,1])\n# rawData = rawData[-allLine,]\n\n# year = rawData$年度 # or year = rawData[,1]\n\n\nfor(yid in c(1:length(rawData[,1])))\n{\n  barplot(as.matrix(rawData[yid,c(-1)]), main = paste0(\"中華職棒\", rawData[yid,1],\"年進階打擊數據\"))\n}",
+    "created" : 1488339537815.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "626456110",
+    "id" : "BDDF2F21",
+    "lastKnownWriteTime" : 1488340144,
+    "last_content_update" : 1488340144209,
+    "path" : "C:/Users/Andy/Desktop/R/Andytsai/HitData/HitData/HitData.R",
+    "project_path" : "HitData.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
