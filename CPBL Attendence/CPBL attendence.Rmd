@@ -10,19 +10,24 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## R Markdown
-中華職棒歷年進場人數分析
-資料來源：http://zxc22.idv.tw/
+##中華職棒歷年進場人數分析
+棒球在臺灣的發展起源於日治時期，並於1990年代開始發展職業棒球，歷經了「中華職棒聯盟」、「台灣大聯盟」，到現在的「中華職棒大聯盟(CPBL)」。熱血激情的棒球賽事，培養了不少死忠球迷，使得棒球成為臺灣的國球。然而，中職在2005年到2009年爆發一連串的假球事件，傷透了許多球迷的心，使得臺灣棒球進入一段黑暗期。直到近幾年，在參與國際賽事及國內球團的用心經營下，願意買票入場觀看棒球賽事的人數逐漸回升。我從2013年開始觀看中職賽事，每年都會入場支持自己所喜愛的球隊，因為入門的時間較晚，使得對中職的歷史較不熟悉。因此我想分析中職歷年進場人數的變化，藉此了解更多臺灣棒球的歷史。
 
+##R code
 <font color="AAAAAA">
-``{r}
 rm(list = ls(all=TRUE))
+
 library(png)
+
 library(animation)
+
 rawData = read.csv('CPBL attendence.csv', header = TRUE)
+
 allLine = length(rawData[,1])
+
 rawData = rawData[-allLine,]
 ani.options("convert")
+
 saveGIF(
   for(yid in c(1:length(rawData[,1])))
   {
@@ -30,6 +35,9 @@ saveGIF(
   },movie.name = "CPBL attendence.gif",
   interval = 0.8, ani.width = 800, ani.height = 500)
 </font>
+
+##圖表處理
+首先我從網站上整理出中職15年至今的年入場總人數、場均人數及目前各主要球場(新莊、桃園、洲際及澄清湖)的入場人數。從中觀察每年的人數變化，找出導致這些變化的主因。
 
 <img src="https://andytsai8.github.io/Andytsai/CPBL%20Attendence/CPBL%20attendence.gif">
 
@@ -39,3 +47,6 @@ saveGIF(
 3. 2013年受到世界棒球經典賽(WBC)影響，國內棒球風氣逐漸起色，至今仍持續增加。
 4. 2011年，Lamigo桃猿隊將主場從高雄遷至桃園棒球場，兩年後陸續推出「猿風加油」、「全猿主場」，帶起一股新的應援風潮，成功吸引家庭族群，使得進場人數逐年增加，近三年都能超越平均進場人數。
 5. 即使義大犀牛隊將澄清湖球場設為主場，舉辦活動吸引球迷進場，因為球場地理位置不佳，仍無法提高進場人數。在桃園、洲際球場啟用後，澄清湖球場顯得相形失色。
+
+##資料來源
+中華職棒觀眾人數分析 http://zxc22.idv.tw/
