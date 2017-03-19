@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"HW1_NTUnumber\"\nauthor: \"R04524043_ChenYuTsai\"\ndate: \"2017年3月1日\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## R Markdown\n台大人~~~年~~~\n資料來源：\n\n```{r}\nrawData = read.csv('NTU.csv', header = TRUE)\nallLine = length(rawData[,1])\nrawData = rawData[-allLine,]\n\n# year = rawData$年度 # or year = rawData[,1]\n\n\nfor(yid in c(1:length(rawData[,1])))\n{\n  barplot(as.matrix(rawData[yid,c(-1,-2)]), main = paste0(\"國立臺灣大學\", rawData[yid,1],\"年大學部總計\", rawData[yid,2], \"人\"))\n}\n```\n\n## rrr\n分析\n\n<img src=\"https://andytsai8.github.io/Andytsai/StudentNumberNTU/students.gif\">\n",
+    "created" : 1488337908819.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2912715035",
+    "id" : "654EF2FC",
+    "lastKnownWriteTime" : 1488946667,
+    "last_content_update" : 1488946667501,
+    "path" : "C:/Users/Andy/Desktop/R/Andytsai/StudentNumberNTU/StudentNumberNTU.Rmd",
+    "project_path" : "StudentNumberNTU.Rmd",
+    "properties" : {
+        "last_setup_crc32" : "",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

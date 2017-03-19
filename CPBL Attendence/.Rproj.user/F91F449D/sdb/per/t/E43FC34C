@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list = ls(all=TRUE))\nlibrary(png)\nlibrary(animation)\n\nrawData = read.csv('CPBL attendence.csv', header = TRUE)\nallLine = length(rawData[,1])\nrawData = rawData[-allLine,]\n\nani.options(\"convert\")\nsaveGIF(\n  for(yid in c(1:length(rawData[,1])))\n  {\n    barplot(as.matrix(rawData[yid,c(-1,-2)]), main = paste0(\"中華職棒 \", rawData[yid,1],\" 年進場人數總計 \",rawData[yid,2],\" 人\"))\n  },movie.name = \"CPBL attendence.gif\",\n  interval = 0.5, ani.width = 1000, ani.height = 500)",
+    "created" : 1489894901290.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3137029970",
+    "id" : "E43FC34C",
+    "lastKnownWriteTime" : 1489898055,
+    "last_content_update" : 1489898055821,
+    "path" : "C:/Users/Andy/Desktop/R/Andytsai/CPBL Attendence/CPBL attendence.R",
+    "project_path" : "CPBL attendence.R",
+    "properties" : {
+        "docOutlineVisible" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

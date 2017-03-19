@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "rm(list = ls(all=TRUE))\nlibrary(plotly)\n\nteachers = read.csv('teachers.csv', header = TRUE)\npositions = c(\"Prof.\", \"Associate Prof.\", \"Assistant Prof.\",\n              \"Insturctor\", \"TA\")\nyears = length(teachers[,1])\n\nallStaffs = data.frame(teachers[,1],\n                       rowSums(teachers[,c(2,7)]),\n                       rep(positions[1], years))\nnames(allStaffs) = c(\"years\",\"people\",\"position\")\nfor(tid in seq(3,6))\n{\n  if(tid < 5)\n  {\n    temp = data.frame(teachers[,1],\n                      rowSums(teachers[,c(tid,tid+5)]),\n                      rep(positions[tid-1],years))\n  }\n  else\n  {\n    temp = data.frame(teachers[,1],\n                      teachers[,tid],\n                      rep(positions[tid-1],years))\n  }\n  names(temp) = c(\"years\",\"people\",\"position\")\n  allStaffs = rbind(allStaffs,temp)\n}\n\np<-plot_ly(allStaffs, x=~years, y=~people, color=~position) %>%\n  add_lines() %>%\n  layout(title = \"國立臺灣大學1996年至2015年專任師資人數\",\n         xaxis = list(title = \"年度\"),\n         yaxis = list(title = \"人數\"))\np\nhtmlwidgets::saveWidget(p, \"index.html\")",
+    "created" : 1488945426349.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "225137884",
+    "id" : "9518C975",
+    "lastKnownWriteTime" : 13229817834242158,
+    "last_content_update" : 1488945430104,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

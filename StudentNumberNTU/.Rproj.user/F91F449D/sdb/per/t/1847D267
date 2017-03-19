@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(plotly)\n\nx <- c(1:100)\nrandom_y <- rnorm(100, mean = 0)\ndata <- data.frame(x, random_y)\np <- plot_ly(data, x = ~x, y = ~random_y, type = 'scatter', mode = 'lines')\n\nhtmlwidgets::saveWidget(p,\"test.html\") #save in html directly\n\n#chart_link = plotly_POST(p, filename=\"line/basic\")\n#chart_link",
+    "created" : 1488942491906.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "206447871",
+    "id" : "1847D267",
+    "lastKnownWriteTime" : 1488945875,
+    "last_content_update" : 1488945875345,
+    "path" : "C:/Users/Andy/Desktop/R/Andytsai/StudentNumberNTU/Test.R",
+    "project_path" : "Test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
