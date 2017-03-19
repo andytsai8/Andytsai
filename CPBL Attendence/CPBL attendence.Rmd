@@ -9,15 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## R Markdown
 中華職棒歷年進場人數分析
 資料來源：http://zxc22.idv.tw/
 
-```{r}
+``{r}
 rm(list = ls(all=TRUE))
 library(png)
 library(animation)
