@@ -1,0 +1,45 @@
+---
+title: "CPBL attendence"
+author: "R04524043_ChenYuTsai"
+date: "2017年3月19日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+台大人~~~年~~~
+資料來源：
+
+```{r}
+rm(list = ls(all=TRUE))
+library(png)
+library(animation)
+
+rawData = read.csv('CPBL attendence.csv', header = TRUE)
+allLine = length(rawData[,1])
+rawData = rawData[-allLine,]
+
+ani.options("convert")
+saveGIF(
+  for(yid in c(1:length(rawData[,1])))
+  {
+    barplot(as.matrix(rawData[yid,c(-1,-2)]), main = paste0("中華職棒 ", rawData[yid,1]," 年進場人數總計 ",rawData[yid,2]," 人"))
+  },movie.name = "CPBL attendence.gif",
+  interval = 0.5, ani.width = 1000, ani.height = 500)
+
+<img src="https://andytsai8.github.io/Andytsai/StudentNumberNTU/students.gif">
+
+## rrr
+分析
+<<<<<<< HEAD
+
+<img src="https://andytsai8.github.io/Andytsai/CPBL%20Attendence/CPBL%20attendence.gif">
+=======
+>>>>>>> origin/master
