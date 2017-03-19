@@ -4,7 +4,6 @@ library(animation)
 
 rawData = read.csv('CPBL attendence.csv', header = TRUE)
 allLine = length(rawData[,1])
-rawData = rawData[-allLine,]
 
 ani.options("convert")
 saveGIF(
