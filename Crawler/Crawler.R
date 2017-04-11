@@ -1,0 +1,20 @@
+rm(list=ls(all.names=TRUE))
+library(XML)
+library(RCurl)
+library(httr)
+
+urlPath <- "http://www.loveshare.online/category/illustrator"
+temp  <- getURL(urlPath, encoding = "big5")
+xmldoc  <- htmlParse(temp)
+title <- xpathSApply(xmldoc, "//div/div[2]/header/h2/a", xmlValue)
+title <- gsub("Illustrator","",title)
+date  <- xpathSApply(xmldoc, "//div/div[3]/span[1]/a[1]", xmlValue)
+comments <- xpathSApply(xmldoc, "//div/div[3]/span[1]/a[2]", xmlValue)
+comments <- gsub("[a-zA-Z]","",comments)
+views <- xpathSApply(xmldoc, "//div/div[3]/span[2]/a[1]", xmlValue)
+views <- gsub("[a-zA-Z]","",views)
+thumbs <- xpathSApply(xmldoc, "//div/div[3]/span[2]/a[2]", xmlValue)
+thumbs <- gsub("[a-zA-Z]","",thumbs)
+
+alldata <- data.frame(title, date, comments, views, thumbs)
+write.table(alldata, "crawler.csv")
