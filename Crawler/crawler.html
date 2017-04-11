@@ -118,7 +118,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">crawler</h1>
 <h4 class="author"><em>R04524043_ChenYuTsai</em></h4>
-<h4 class="date"><em>2017年4月11日</em></h4>
+<h4 class="date"><em>2017???4???11???</em></h4>
 
 </div>
 
@@ -129,7 +129,7 @@ library(RCurl)
 library(httr)
 
 urlPath &lt;- &quot;http://www.loveshare.online/category/illustrator&quot;
-temp  &lt;- getURL(urlPath, encoding = &quot;big5&quot;)
+temp  &lt;- getURL(urlPath, encoding = &quot;UTF-8&quot;)
 xmldoc  &lt;- htmlParse(temp)
 title &lt;- xpathSApply(xmldoc, &quot;//div/div[2]/header/h2/a&quot;, xmlValue)
 title &lt;- gsub(&quot;Illustrator&quot;,&quot;&quot;,title)
@@ -230,8 +230,8 @@ kable(data)</code></pre>
 </tbody>
 </table>
 <div class="section level2">
-<h2>資料來源</h2>
-<p>illustrator-腦袋裡只有設計 <a href="http://www.loveshare.online/category/illustrator" class="uri">http://www.loveshare.online/category/illustrator</a></p>
+<h2>資?????????</h2>
+<p>illustrator-???袋裡??????設??? <a href="http://www.loveshare.online/category/illustrator" class="uri">http://www.loveshare.online/category/illustrator</a></p>
 </div>
 
 

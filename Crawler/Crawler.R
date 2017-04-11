@@ -4,7 +4,7 @@ library(RCurl)
 library(httr)
 
 urlPath <- "http://www.loveshare.online/category/illustrator"
-temp  <- getURL(urlPath, encoding = "big5")
+temp  <- getURL(urlPath, encoding = "UTF-8")
 xmldoc  <- htmlParse(temp)
 title <- xpathSApply(xmldoc, "//div/div[2]/header/h2/a", xmlValue)
 title <- gsub("Illustrator","",title)

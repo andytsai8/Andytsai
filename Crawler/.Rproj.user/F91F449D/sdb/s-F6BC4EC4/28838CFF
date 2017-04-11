@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "rm(list=ls(all.names=TRUE))\nlibrary(XML)\nlibrary(RCurl)\nlibrary(httr)\n\nurlPath <- \"http://www.loveshare.online/category/illustrator\"\ntemp  <- getURL(urlPath, encoding = \"big5\")\nxmldoc  <- htmlParse(temp)\ntitle <- xpathSApply(xmldoc, \"//div/div[2]/header/h2/a\", xmlValue)\ntitle <- gsub(\"Illustrator\",\"\",title)\ndate  <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[1]\", xmlValue)\ncomments <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[2]\", xmlValue)\ncomments <- gsub(\"[a-zA-Z]\",\"\",comments)\nviews <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[1]\", xmlValue)\nviews <- gsub(\"[a-zA-Z]\",\"\",views)\nthumbs <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[2]\", xmlValue)\nthumbs <- gsub(\"[a-zA-Z]\",\"\",thumbs)\n\nalldata <- data.frame(title, date, comments, views, thumbs)\nwrite.table(alldata, \"crawler.csv\")",
+    "contents" : "rm(list=ls(all.names=TRUE))\nlibrary(XML)\nlibrary(RCurl)\nlibrary(httr)\n\nurlPath <- \"http://www.loveshare.online/category/illustrator\"\ntemp  <- getURL(urlPath, encoding = \"UTF-8\")\nxmldoc  <- htmlParse(temp)\ntitle <- xpathSApply(xmldoc, \"//div/div[2]/header/h2/a\", xmlValue)\ntitle <- gsub(\"Illustrator\",\"\",title)\ndate  <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[1]\", xmlValue)\ncomments <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[2]\", xmlValue)\ncomments <- gsub(\"[a-zA-Z]\",\"\",comments)\nviews <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[1]\", xmlValue)\nviews <- gsub(\"[a-zA-Z]\",\"\",views)\nthumbs <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[2]\", xmlValue)\nthumbs <- gsub(\"[a-zA-Z]\",\"\",thumbs)\n\nalldata <- data.frame(title, date, comments, views, thumbs)\nwrite.table(alldata, \"crawler.csv\")",
     "created" : 1491911011824.000,
     "dirty" : false,
     "encoding" : "BIG5",
     "folds" : "",
-    "hash" : "1843316760",
+    "hash" : "2268028981",
     "id" : "28838CFF",
-    "lastKnownWriteTime" : 1491914771,
-    "last_content_update" : 1491914771204,
+    "lastKnownWriteTime" : 1491916424,
+    "last_content_update" : 1491916424700,
     "path" : "C:/Users/Andy/Desktop/R/Andytsai/Crawler/Crawler.R",
     "project_path" : "Crawler.R",
     "properties" : {

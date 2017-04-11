@@ -1,7 +1,7 @@
 ---
 title: "crawler"
 author: "R04524043_ChenYuTsai"
-date: "2017年4月11日"
+date: "2017???4???11???"
 output: html_document
 ---
 
@@ -16,7 +16,7 @@ library(RCurl)
 library(httr)
 
 urlPath <- "http://www.loveshare.online/category/illustrator"
-temp  <- getURL(urlPath, encoding = "big5")
+temp  <- getURL(urlPath, encoding = "UTF-8")
 xmldoc  <- htmlParse(temp)
 title <- xpathSApply(xmldoc, "//div/div[2]/header/h2/a", xmlValue)
 title <- gsub("Illustrator","",title)
@@ -33,11 +33,11 @@ write.table(alldata, "crawler.csv")
 
 ```
 
-```{r kable}
+```{r}
 library(knitr)
 data=read.table("crawler.csv")
 kable(data)
 ```
 
-##資料來源
-illustrator-腦袋裡只有設計 http://www.loveshare.online/category/illustrator
+##資?????????
+illustrator-???袋裡??????設??? http://www.loveshare.online/category/illustrator
