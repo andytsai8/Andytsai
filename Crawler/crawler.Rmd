@@ -1,7 +1,7 @@
 ---
 title: "crawler"
 author: "R04524043_ChenYuTsai"
-date: "2017???4???11???"
+date: "2017/4/11"
 output: html_document
 ---
 
@@ -39,5 +39,5 @@ data=read.table("crawler.csv")
 kable(data)
 ```
 
-##資?????????
-illustrator-???袋裡??????設??? http://www.loveshare.online/category/illustrator
+##資料來源
+illustrator-腦袋裡只有設計 http://www.loveshare.online/category/illustrator
