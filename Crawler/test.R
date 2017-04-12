@@ -1,15 +1,3 @@
----
-title: "crawler"
-author: "R04524043_ChenYuTsai"
-date: "2017/04/11"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r eval=T}
 rm(list=ls(all.names=TRUE))
 library(XML)
 library(RCurl)
@@ -34,13 +22,3 @@ library(knitr)
 kable(alldata)
 
 write.table(alldata, "crawler.csv")
-```
-
-```{r}
-library(knitr)
-data=read.table("crawler.csv")
-#kable(data)
-```
-
-##資料來源
-illustrator-腦袋裡只有設計 http://www.loveshare.online/category/illustrator
