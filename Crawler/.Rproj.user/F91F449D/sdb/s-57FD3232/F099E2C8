@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "---\ntitle: \"crawler\"\nauthor: \"R04524043_ChenYuTsai\"\ndate: \"2017/04/11\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n```{r eval=T}\nrm(list=ls(all.names=TRUE))\nlibrary(XML)\nlibrary(RCurl)\nlibrary(httr)\n\n\nurlPath <- \"http://www.loveshare.online/category/illustrator\"\ntemp  <- getURL(urlPath, encoding = \"UTF-8\")\nxmldoc  <- htmlParse(temp, encoding = \"UTF-8\")\ntitle <- xpathSApply(xmldoc, \"//div/div[2]/header/h2/a\", xmlValue)\ntitle <- gsub(\"Illustrator\",\"\",title)\ndate  <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[1]\", xmlValue)\ncomments <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[2]\", xmlValue)\ncomments <- gsub(\"[a-zA-Z]\",\"\",comments)\nviews <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[1]\", xmlValue)\nviews <- gsub(\"[a-zA-Z]\",\"\",views)\nthumbs <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[2]\", xmlValue)\nthumbs <- gsub(\"[a-zA-Z]\",\"\",thumbs)\n\nalldata <- data.frame(title, date, comments, views, thumbs)\nlibrary(knitr)\nkable(alldata)\n\nwrite.table(alldata, \"crawler.csv\")\n```\n\n```{r}\nlibrary(knitr)\ndata=read.table(\"crawler.csv\")\n#kable(data)\n```\n\n##資料來源\nillustrator-腦袋裡只有設計 http://www.loveshare.online/category/illustrator",
+    "contents" : "---\ntitle: \"crawler\"\nauthor: \"R04524043_ChenYuTsai\"\ndate: \"2017/04/11\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n```{r eval=T}\nrm(list=ls(all.names=TRUE))\nlibrary(XML)\nlibrary(RCurl)\nlibrary(httr)\n\n\nurlPath <- \"http://www.loveshare.online/category/illustrator\"\ntemp  <- getURL(urlPath, encoding = \"UTF-8\")\nxmldoc  <- htmlParse(temp, encoding = \"UTF-8\")\ntitle <- xpathSApply(xmldoc, \"//div/div[2]/header/h2/a\", xmlValue)\ntitle <- gsub(\"Illustrator\",\"\",title)\ndate  <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[1]\", xmlValue)\ncomments <- xpathSApply(xmldoc, \"//div/div[3]/span[1]/a[2]\", xmlValue)\ncomments <- gsub(\"[a-zA-Z]\",\"\",comments)\nviews <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[1]\", xmlValue)\nviews <- gsub(\"[a-zA-Z]\",\"\",views)\nthumbs <- xpathSApply(xmldoc, \"//div/div[3]/span[2]/a[2]\", xmlValue)\nthumbs <- gsub(\"[a-zA-Z]\",\"\",thumbs)\n\nalldata <- data.frame(title, date, comments, views, thumbs)\nwrite.table(alldata, \"crawler.csv\")\n```\n\n```{r}\nlibrary(knitr)\ndata=read.table(\"crawler.csv\")\nkable(data)\n```\n\n##資料來源\nillustrator-腦袋裡只有設計 http://www.loveshare.online/category/illustrator",
     "created" : 1491913114252.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2448382152",
+    "hash" : "2452054073",
     "id" : "F099E2C8",
-    "lastKnownWriteTime" : 1491964229,
-    "last_content_update" : 1491964229213,
+    "lastKnownWriteTime" : 1491964477,
+    "last_content_update" : 1491964477921,
     "path" : "C:/Users/Andy/Desktop/R/Andytsai/Crawler/crawler.Rmd",
     "project_path" : "crawler.Rmd",
     "properties" : {

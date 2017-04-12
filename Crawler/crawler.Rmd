@@ -30,16 +30,13 @@ thumbs <- xpathSApply(xmldoc, "//div/div[3]/span[2]/a[2]", xmlValue)
 thumbs <- gsub("[a-zA-Z]","",thumbs)
 
 alldata <- data.frame(title, date, comments, views, thumbs)
-library(knitr)
-kable(alldata)
-
 write.table(alldata, "crawler.csv")
 ```
 
 ```{r}
 library(knitr)
 data=read.table("crawler.csv")
-#kable(data)
+kable(data)
 ```
 
 ##資料來源

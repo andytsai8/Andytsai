@@ -144,95 +144,93 @@ thumbs &lt;- xpathSApply(xmldoc, &quot;//div/div[3]/span[2]/a[2]&quot;, xmlValue
 thumbs &lt;- gsub(&quot;[a-zA-Z]&quot;,&quot;&quot;,thumbs)
 
 alldata &lt;- data.frame(title, date, comments, views, thumbs)
-library(knitr)
-kable(alldata)</code></pre>
+write.table(alldata, &quot;crawler.csv&quot;)</code></pre>
+<pre class="r"><code>library(knitr)
+data=read.table(&quot;crawler.csv&quot;)
+kable(data)</code></pre>
 <table>
 <thead>
 <tr class="header">
 <th align="left">title</th>
 <th align="left">date</th>
-<th align="left">comments</th>
-<th align="left">views</th>
-<th align="left">thumbs</th>
+<th align="right">comments</th>
+<th align="right">views</th>
+<th align="right">thumbs</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">把數碼照片轉化成像素效果</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">581</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">581</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">簡單快速製作光暈背景效果</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">415</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">415</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">繪製卡通風格的應用程序圖標</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">23</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">23</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">繪製立體逼真的鴨梨效果圖</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">47</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">47</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">製作神話般的指甲油文字效果</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">727</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">727</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">設計時尚有趣的卡通人物臉部</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">25</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">25</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">詳細解析圖標的質感表現技巧</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">33</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">33</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">設計金黃色的芥末文字效果</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">36</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">36</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">繪製逼真的美國隊長盾牌圖標</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">813</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">813</td>
+<td align="right">0</td>
 </tr>
 <tr class="even">
 <td align="left">結合PS設計時尚的花紋插畫教程</td>
 <td align="left">2017-02-18</td>
-<td align="left">0</td>
-<td align="left">45</td>
-<td align="left">0</td>
+<td align="right">0</td>
+<td align="right">45</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>write.table(alldata, &quot;crawler.csv&quot;)</code></pre>
-<pre class="r"><code>library(knitr)
-data=read.table(&quot;crawler.csv&quot;)
-#kable(data)</code></pre>
 <div class="section level2">
 <h2>資料來源</h2>
 <p>illustrator-腦袋裡只有設計 <a href="http://www.loveshare.online/category/illustrator" class="uri">http://www.loveshare.online/category/illustrator</a></p>
